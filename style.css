@@ -1,178 +1,437 @@
-*{
-    padding: 0%;
-    margin: 0%;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    
 }
-body{
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     background-color: black;
-    
-    
+    overflow-x: hidden;
 }
-header{
+
+/* =========================
+   COMMON
+========================= */
+
+h1,
+h2,
+h3 {
+    font-family: Fjalla, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    color: aliceblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
     display: flex;
     align-items: center;
-    background-color: transparent;
     justify-content: space-between;
+
+    width: 100%;
     height: 80px;
+    padding: 0 30px;
+
+    background-color: transparent;
+
     position: sticky;
-    top: 0%;
-    z-index: 1;
+    top: 0;
+    z-index: 10;
 }
-#content p{
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+}
+
+header ul li {
+    margin: 10px;
+    list-style: none;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    background-color: gold;
+    padding: 10px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(255, 218, 5, 0.79);
+}
+
+
+/* =========================
+   HERO VIDEO
+========================= */
+
+#videos {
+    position: relative;
+    width: 100%;
+}
+
+#videos video {
+    width: 100%;
+    height: 100vh;
+
+    object-fit: cover;
+    display: block;
+}
+
+#videos #content {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    right: 10%;
+}
+
+#content h1 {
+    font-size: 100px;
+    color: gold;
+    text-align: left;
+}
+
+#content p {
     font-family: sans-serif;
     font-size: 30px;
     color: aliceblue;
 }
-h1{
-    font-family: Fjalla system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: aliceblue;
-}
-h2{
-     font-family: Fjalla system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: aliceblue;
-}
-h3{
-   color: aliceblue; font-family:fjalla system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-p{
-    color: aliceblue;
-}
-button{
-    background-color: gold;
-    padding: 10px 25px;
-    margin:5px;
-    border: 0cm;
-    border-radius: 10px;
-}
-header div{
-    display: flex;
-    align-items: center;
-}
-header ul{
-    display: flex;
-}
-header ul li{
-    margin: 10px;
-    list-style: none;
-}
-a{
-    text-decoration: none;
-    color: aliceblue;
-}
-a:hover{
-    text-decoration: underline;
-}
-button:hover{
-    background-color: rgba(255, 218, 5, 0.79);
 
-}
-#videos video{
-    width: 100%;
-    height: 100vh;
-    position: relative;
-
-}
-#videos #content{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-}
-#content h1{
-    font-size: 100px;
-    color: gold;
-}
-#content button{
+#content button {
     background-color: gold;
-    border: 0cm;
+    border: none;
     padding: 15px 35px;
     border-radius: 10px;
 }
-#content button:hover{
-     background-color: rgba(255, 218, 5, 0.79);
-}
-.row{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-}
-#data{
+
+
+/* =========================
+   DATA SECTION
+========================= */
+
+#data {
     padding: 50px;
     text-align: center;
 }
-.cols{
-    width: 50%;
-    height: 500px;
-    padding:50px;
-    text-align: center;
-    padding-top: 30px;
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    gap: 20px;
 }
-.cols h1,h2,h3,button{
+
+.cols {
+    width: 50%;
+    min-height: 500px;
+
+    padding: 50px;
+    padding-top: 30px;
+
+    text-align: center;
+}
+
+.cols h1,
+.cols h2,
+.cols h3,
+.cols button {
     margin-top: 10px;
 }
-.col2{
-    width: 300px;
+
+
+/* =========================
+   FEATURES
+   CONVENIENCE / COMMUNITY /
+   QUALITY / ACCESS
+========================= */
+
+.col2 {
+    width: 25%;
     padding: 20px;
 }
-.row2{
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-    width: 80%;
-    height: 100vh;
-    flex-wrap: wrap;
-    margin-left: 90px;
 
+.col2 img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 15px;
 }
-.col3{
-    width: 250px;
+
+.col2 h1 {
+    font-size: 28px;
+    margin-top: 15px;
+}
+
+.col2 p {
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   TRAINERS
+========================= */
+
+.row2 {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    width: 90%;
+    margin: 40px auto;
+
+    min-height: auto;
+}
+
+.col3 {
+    width: 100%;
     padding: 10px;
 }
-.col3 img{
+
+.row2 .col3 img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+    display: block;
+
     border-radius: 20px;
-    height: 50%;
 }
-h1{
- text-align: center;
-}
-.whatsapp{
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
     position: fixed;
-    top: 450px;
+
     right: 20px;
-    z-index: 1;
+    bottom: 25px;
+
+    z-index: 20;
 }
-#cultpass{
-    margin-top: 350px;
+
+.whatsapp img {
+    width: 65px;
+    height: 65px;
 }
-#cultpass h3{
+
+
+/* =========================
+   CULTPASS
+========================= */
+
+#cultpass {
+    margin-top: 150px;
+    padding: 40px 5%;
+}
+
+#cultpass > h1 {
+    margin-bottom: 40px;
+    font-size: 45px;
+}
+
+#cultpass .row {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+#cultpass .col3 {
+    width: 100%;
+}
+
+#cultpass .col3 img {
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 20px;
+}
+
+#cultpass .col3 h1 {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+#cultpass h3 {
     color: aliceblue;
+    margin-top: 10px;
 }
-#cultpass ul li{
+
+#cultpass ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+#cultpass ul li {
     color: aliceblue;
     line-height: 30px;
-    padding-left: 9px;
+    padding-left: 5px;
 }
-footer{
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
     padding: 40px;
     padding-top: 20px;
-    margin-top: 20px;
-    border-top: 2px solid rgb(255, 255, 255);
+
+    margin-top: 50px;
+
+    border-top: 2px solid white;
 }
-footer h3{
+
+footer h3 {
     color: aliceblue;
 }
-footer ul li{
+
+footer ul li {
     color: aliceblue;
     list-style: none;
     line-height: 30px;
 }
-#icon{
+
+
+/* =========================
+   MOBILE ICON
+========================= */
+
+#icon {
     display: none;
-    width: 20px;
+    width: 25px;
+    cursor: pointer;
 }
-@media screen and (max-width:400px) {
+
+
+/* =====================================================
+   TABLET
+   992px
+===================================================== */
+
+@media screen and (max-width: 992px) {
+
+    /* Header */
+
+    header {
+        padding: 0 20px;
+    }
+
+
+    /* Hero */
+
+    #content h1 {
+        font-size: 70px;
+    }
+
+    #content p {
+        font-size: 24px;
+    }
+
+
+    /* Features */
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .col2 {
+        width: calc(50% - 20px);
+    }
+
+
+    /* Trainers */
+
+    .row2 {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+
+    .row2 .col3 img {
+        height: 320px;
+    }
+
+
+    /* Cultpass */
+
+    #cultpass {
+        margin-top: 100px;
+    }
+
+    #cultpass .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #cultpass .col3 img {
+        height: 300px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+   600px
+===================================================== */
+
+@media screen and (max-width: 600px) {
+
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
         height: 65px;
         padding: 0 15px;
@@ -185,8 +444,15 @@ footer ul li{
     #icon {
         display: block;
     }
-        #videos video {
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    #videos video {
         height: 70vh;
+        object-fit: cover;
     }
 
     #videos #content {
@@ -198,6 +464,7 @@ footer ul li{
     #content h1 {
         font-size: 45px;
         line-height: 1.1;
+        text-align: left;
     }
 
     #content p {
@@ -209,17 +476,27 @@ footer ul li{
         padding: 12px 25px;
         font-size: 14px;
     }
+
+
+    /* =========================
+       DATA
+    ========================= */
+
+    #data {
+        padding: 30px 15px;
+    }
+
     .row {
         flex-direction: column;
-        min-height: auto;
-        padding: 40px 5%;
-        gap: 20px;
+
+        width: 100%;
+        gap: 30px;
     }
 
     .cols {
         width: 100%;
-        height: auto;
         min-height: auto;
+
         padding: 15px;
     }
 
@@ -227,15 +504,49 @@ footer ul li{
         font-size: 35px;
     }
 
+
+    /* =========================
+       FEATURES
+    ========================= */
+
     .col2 {
         width: 100%;
         padding: 10px;
     }
-    .row2 {
+
+    .col2 img {
         width: 100%;
-        min-height: auto;
-        padding: 40px 15px;
-        gap: 15px;
+        height: 250px;
+
+        object-fit: cover;
+    }
+
+    .col2 h1 {
+        font-size: 28px;
+    }
+
+    .col2 p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       TRAINERS
+    ========================= */
+
+    .row2 {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        margin: 30px auto;
+
+        padding: 0 15px;
+
+        gap: 20px;
     }
 
     .col3 {
@@ -243,17 +554,53 @@ footer ul li{
         padding: 10px;
     }
 
-    .col3 img {
+    .row2 .col3 img {
         width: 100%;
-        height: auto;
+        height: 350px;
+
+        object-fit: cover;
     }
+
+
+    /* =========================
+       CULTPASS
+    ========================= */
+
     #cultpass {
-        margin-top: 2900px;
+        margin-top: 100px;
         padding: 30px 20px;
     }
 
+    #cultpass > h1 {
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    #cultpass .row {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    #cultpass .col3 {
+        width: 100%;
+    }
+
+    #cultpass .col3 img {
+        width: 100%;
+        height: 300px;
+
+        object-fit: cover;
+    }
+
+    #cultpass .col3 h1 {
+        font-size: 25px;
+    }
+
     #cultpass h3 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     #cultpass ul li {
@@ -261,10 +608,25 @@ footer ul li{
         line-height: 25px;
     }
 
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
     .whatsapp {
         right: 15px;
         bottom: 20px;
     }
+
+    .whatsapp img {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
         padding: 30px 20px;
@@ -273,5 +635,42 @@ footer ul li{
 
     footer ul li {
         font-size: 14px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   400px
+===================================================== */
+
+@media screen and (max-width: 400px) {
+
+    #content h1 {
+        font-size: 38px;
+    }
+
+    #content p {
+        font-size: 16px;
+    }
+
+    #content button {
+        padding: 10px 20px;
+    }
+
+    .col2 img {
+        height: 220px;
+    }
+
+    .row2 .col3 img {
+        height: 300px;
+    }
+
+    #cultpass .col3 img {
+        height: 250px;
+    }
+
+    #cultpass {
+        margin-top: 80px;
     }
 }
